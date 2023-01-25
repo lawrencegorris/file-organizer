@@ -1,5 +1,14 @@
+import os
+
+# Clear screen
+def ClearScreen():
+    os.system('cls')
+
 # Valid options upon startup
-validOptions = [1, 2, 3]
+validProgramOptions = [1, 2, 3]
+
+# Valid options to sort by
+validOrganizeOptions = [1, 2]
 
 #def ReadOptionString():
 #    string = input()
@@ -27,6 +36,11 @@ def ShowProgramOptions():
     print("2. Run program with logging.")
     print("3. Quit the program.")
 
+def ShowOrganizeOptions():
+    print("1. Based on general file type (document, image, video, ...)")
+    print("2. Based on file extension (.txt, .jpg, .png, .mpv, .avi, ...)")
+
 # Prints an empty line
 def PrintEmptyLine():
     print()
+
