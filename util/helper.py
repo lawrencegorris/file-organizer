@@ -44,3 +44,11 @@ def ShowOrganizeOptions():
 def PrintEmptyLine():
     print()
 
+def CheckForDirectory(directory_name):
+    directory_exists = os.path.exists(directory_name)
+    if (directory_exists == False):
+        MakeDirectory(directory_name)
+        ShowMessage(f"Created directory: {directory_name}")
+
+def MakeDirectory(directory_name):
+    os.mkdir(directory_name)
