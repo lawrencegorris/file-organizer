@@ -5,10 +5,10 @@ def ClearScreen():
     os.system('cls')
 
 # Valid options upon startup
-validProgramOptions = [1, 2, 3]
+valid_program_options = [1, 2, 3]
 
 # Valid options to sort by
-validOrganizeOptions = [1, 2]
+valid_organize_options = [1, 2]
 
 #def ReadOptionString():
 #    string = input()

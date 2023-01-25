@@ -8,15 +8,15 @@ def Main():
     helper.ShowMessage("Choose what you want to do.")
     helper.PrintEmptyLine()
     helper.ShowProgramOptions()
-    programOption = helper.ReadOptionInt()
+    program_option = helper.ReadOptionInt()
 
     # Validate chosen option
-    while programOption not in helper.validProgramOptions:
+    while program_option not in helper.valid_program_options:
         helper.ShowErrorMessage("Not a valid option. Choose what you want to do.")
-        programOption = helper.ReadOptionInt()
+        program_option = helper.ReadOptionInt()
 
     # Handle chosen option
-    match programOption:
+    match program_option:
         case 1: 
             RunOrganizerWithoutLogging()
         case 2: 

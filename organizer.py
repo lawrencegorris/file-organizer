@@ -1,5 +1,6 @@
 import os
 from util import helper
+from util import formats
 
 # Run without creating/writing to log file
 def RunOrganizerWithoutLogging():
@@ -11,14 +12,14 @@ def RunOrganizerWithoutLogging():
     helper.ShowMessage("Choose how you want your files to be organized.")
     helper.ShowOrganizeOptions()
     helper.PrintEmptyLine()
-    organizeOption = helper.ReadOptionInt()
+    organize_option = helper.ReadOptionInt()
 
-    while organizeOption not in helper.validOrganizeOptions:
+    while organize_option not in helper.valid_organize_options:
         helper.ShowErrorMessage("Not a valid option. Choose how you want your files to be organized.")
         helper.ShowOrganizeOptions()
-        organizeOption = helper.ReadOptionInt()
+        organize_option = helper.ReadOptionInt()
     
-    match organizeOption:
+    match organize_option:
         case 1: 
             OrganizeAccordingToType()
         #case 2: OrganizeAccordingToExtension()
@@ -29,16 +30,12 @@ def RunOrganizerWithLogging():
 
 # Sorts files in general directories based on type (document, image, video)
 def OrganizeAccordingToType():
-    currentUser = os.getlogin()
-    os.chdir(f"C:/Users/{currentUser}/Downloads")
+    current_user = os.getlogin()
+    os.chdir(f"C:/Users/{current_user}/Downloads")
     directory = os.listdir()
     for item in directory:
         if (os.path.isfile(item)):
-            print(f"{item} is a file")
-        else:
-            print(f"{item} is a directory")
-
-
+            item_extension = os.path.splitext(item)[1]
 
 
 # Sorts files in directories for all different file extensions (.txt, .jpg, .png, .mpv, .avi)
