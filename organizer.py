@@ -35,6 +35,7 @@ def OrganizeAccordingToType():
     os.chdir(f"C:/Users/{current_user}/Downloads")
     directory = os.listdir()
     current_directory = os.getcwd()
+    # for each item in the directory, see what format it belongs to and create/move to correct folder
     for item in directory:
         if (os.path.isfile(item)):
             item_extension = os.path.splitext(item)[1]
@@ -45,9 +46,9 @@ def OrganizeAccordingToType():
                     destination_path = os.path.join(current_directory, format[0])
                     destination = os.path.join(destination_path, item)
                     shutil.move(source, destination)
-                    print(f"Moving: {item}")
-                    print(f"To: {destination}")
-                    
+                    helper.ShowMessage(f"Moving: {item}")
+                    helper.ShowMessage(f"To: {destination}")
+                    helper.PrintEmptyLine()
                     
 # Sorts files in directories for all different file extensions (.txt, .jpg, .png, .mpv, .avi)
 #def OrganizeAccordingToExtension(): 
