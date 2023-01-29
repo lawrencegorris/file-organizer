@@ -1,5 +1,5 @@
 from util import helper
-from organizer import *
+import organizer
 
 def Main():
     helper.ClearScreen()
@@ -7,7 +7,7 @@ def Main():
     # Startup screen
     helper.ShowMessage("Choose what you want to do.")
     helper.PrintEmptyLine()
-    helper.ShowProgramOptions()
+    helper.ShowMenuOptions(helper.startup_menu_options)
     program_option = helper.ReadOptionInt()
 
     # Validate chosen option
@@ -18,10 +18,12 @@ def Main():
     # Handle chosen option
     match program_option:
         case 1: 
-            RunOrganizerWithoutLogging()
+            organizer.RunOrganizerWithoutLogging()
         case 2: 
-            RunOrganizerWithLogging()
+            organizer.RunOrganizerWithLogging()
         case 3: 
             helper.ShowMessage("Goodbye.")
+            exit
     
-Main()
+if __name__ == '__main__':
+    Main()
